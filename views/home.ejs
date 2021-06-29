@@ -1,0 +1,1752 @@
+<% layout("layout/boilerplate") %>
+    <h1 class="text-center text-white">VTradeIN</h1>
+    <% if(status.toUpperCase()=="CLOSED" ) { %>
+        <h4 class="d-flex justify-content-end container">
+            <span class="bg-danger badge">
+                Market Status : <%= status.toUpperCase() %>
+            </span>
+        </h4>
+        <% } else {%>
+            <h4 class="d-flex justify-content-end container">
+                <span class="bg-success badge">
+                    Market Status : <%= status.toUpperCase() %>
+                </span>
+            </h4>
+            <% } %>
+                <%let s="a" ; %>
+                    <h3 class="fw-bold text-center text-white my-3">INDICES</h3>
+                    <div class="container">
+                        <div class="row">
+                            <div class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                <div>
+                                    <%= indices[0].indexName %>
+                                </div>
+                                <div>
+                                    &#8377;<%= indices[0].last %>
+                                </div>
+                                <button type="button" class="d-grid mx-auto my-3 btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#<%= s %>">
+                                    Get Info
+                                </button>
+                                <div class="modal fade" id="<%= s %>" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                    <%= indices[0].indexName %>
+                                                </h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div
+                                                class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <table class="table table-hover">
+                                                    <tr>
+                                                        <td>Open Price</td>
+                                                        <td>
+                                                            <%= indices[0].open %>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>High Price</td>
+                                                        <td>
+                                                            <%= indices[0].high %>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Low Price</td>
+                                                        <td>
+                                                            <%= indices[0].low %>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Close Price</td>
+                                                        <td>
+                                                            <%= indices[0].previousClose %>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% s +="a" %>
+                                <div class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                    <div>
+                                        <%= indices[1].indexName %>
+                                    </div>
+                                    <div>
+                                        &#8377;<%= indices[1].last %>
+                                    </div>
+                                    <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                        data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                        Get Info
+                                    </button>
+                                    <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                        <%= indices[1].indexName %>
+                                                    </h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div
+                                                    class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                    <table class="table table-hover">
+                                                        <tr>
+                                                            <td>Open Price</td>
+                                                            <td>
+                                                                <%= indices[1].open %>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>High Price</td>
+                                                            <td>
+                                                                <%= indices[1].high %>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Low Price</td>
+                                                            <td>
+                                                                <%= indices[1].low %>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Close Price</td>
+                                                            <td>
+                                                                <%= indices[1].previousClose %>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% s +="a" %>
+                                    <div class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                        <div>
+                                            <%= indices[2].indexName %>
+                                        </div>
+                                        <div>
+                                            &#8377;<%= indices[2].last %>
+                                        </div>
+                                        <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                            data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                            Get Info
+                                        </button>
+                                        <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                            <%= indices[2].indexName %>
+                                                        </h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div
+                                                        class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                        <table class="table table-hover">
+                                                            <tr>
+                                                                <td>Open Price</td>
+                                                                <td>
+                                                                    <%= indices[2].open %>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>High Price</td>
+                                                                <td>
+                                                                    <%= indices[2].high %>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Low Price</td>
+                                                                <td>
+                                                                    <%= indices[2].low %>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Close Price</td>
+                                                                <td>
+                                                                    <%= indices[2].previousClose %>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% s +="a" %>
+                                        <div class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                            <div>
+                                                <%= indices[3].indexName %>
+                                            </div>
+                                            <div>
+                                                &#8377;<%= indices[3].last %>
+                                            </div>
+                                            <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                                data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                Get Info
+                                            </button>
+                                            <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">
+                                                                <%= indices[3].indexName %>
+                                                            </h5>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div
+                                                            class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                            <table class="table table-hover">
+                                                                <tr>
+                                                                    <td>Open Price</td>
+                                                                    <td>
+                                                                        <%= indices[3].open %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>High Price</td>
+                                                                    <td>
+                                                                        <%= indices[3].high %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Low Price</td>
+                                                                    <td>
+                                                                        <%= indices[3].low %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Close Price</td>
+                                                                    <td>
+                                                                        <%= indices[3].previousClose %>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                        </div>
+                        <% s="b" %>
+                            <div class="row">
+                                <div class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                    <div>
+                                        <%= indices[4].indexName %>
+                                    </div>
+                                    <div>
+                                        &#8377;<%= indices[4].last %>
+                                    </div>
+                                    <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                        data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                        Get Info
+                                    </button>
+                                    <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                        <%= indices[4].indexName %>
+                                                    </h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div
+                                                    class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                    <table class="table table-hover">
+                                                        <tr>
+                                                            <td>Open Price</td>
+                                                            <td>
+                                                                <%= indices[4].open %>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>High Price</td>
+                                                            <td>
+                                                                <%= indices[4].high %>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Low Price</td>
+                                                            <td>
+                                                                <%= indices[4].low %>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Close Price</td>
+                                                            <td>
+                                                                <%= indices[4].previousClose %>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% s +="b" %>
+                                    <div class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                        <div>
+                                            <%= indices[5].indexName %>
+                                        </div>
+                                        <div>
+                                            &#8377;<%= indices[5].last %>
+                                        </div>
+                                        <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                            data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                            Get Info
+                                        </button>
+                                        <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                            <%= indices[5].indexName %>
+                                                        </h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div
+                                                        class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                        <table class="table table-hover">
+                                                            <tr>
+                                                                <td>Open Price</td>
+                                                                <td>
+                                                                    <%= indices[5].open %>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>High Price</td>
+                                                                <td>
+                                                                    <%= indices[5].high %>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Low Price</td>
+                                                                <td>
+                                                                    <%= indices[5].low %>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Close Price</td>
+                                                                <td>
+                                                                    <%= indices[5].previousClose %>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% s +="b" %>
+                                        <div class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                            <div>
+                                                <%= indices[6].indexName %>
+                                            </div>
+                                            <div>
+                                                &#8377;<%= indices[6].last %>
+                                            </div>
+                                            <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                                data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                Get Info
+                                            </button>
+                                            <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">
+                                                                <%= indices[6].indexName %>
+                                                            </h5>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div
+                                                            class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                            <table class="table table-hover">
+                                                                <tr>
+                                                                    <td>Open Price</td>
+                                                                    <td>
+                                                                        <%= indices[6].open %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>High Price</td>
+                                                                    <td>
+                                                                        <%= indices[6].high %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Low Price</td>
+                                                                    <td>
+                                                                        <%= indices[6].low %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Close Price</td>
+                                                                    <td>
+                                                                        <%= indices[6].previousClose %>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% s +="b" %>
+                                            <div
+                                                class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                                <div>
+                                                    <%= indices[7].indexName %>
+                                                </div>
+                                                <div>
+                                                    &#8377;<%= indices[7].last %>
+                                                </div>
+                                                <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                                    data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                    Get Info
+                                                </button>
+                                                <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                                    <%= indices[7].indexName %>
+                                                                </h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div
+                                                                class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                                <table class="table table-hover">
+                                                                    <tr>
+                                                                        <td>Open Price</td>
+                                                                        <td>
+                                                                            <%= indices[7].open %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>High Price</td>
+                                                                        <td>
+                                                                            <%= indices[7].high %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Low Price</td>
+                                                                        <td>
+                                                                            <%= indices[7].low %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Close Price</td>
+                                                                        <td>
+                                                                            <%= indices[7].previousClose %>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            </div>
+                            <% s="c" %>
+                                <div class="row">
+                                    <div class="text-center col-lg-6 col-md-6 border border-dark border-3 bg-white">
+                                        <div>
+                                            <%= indices[8].indexName %>
+                                        </div>
+                                        <div>
+                                            &#8377;<%= indices[8].last %>
+                                        </div>
+                                        <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                            data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                            Get Info
+                                        </button>
+                                        <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                            <%= indices[8].indexName %>
+                                                        </h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div
+                                                        class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                        <table class="table table-hover">
+                                                            <tr>
+                                                                <td>Open Price</td>
+                                                                <td>
+                                                                    <%= indices[8].open %>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>High Price</td>
+                                                                <td>
+                                                                    <%= indices[8].high %>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Low Price</td>
+                                                                <td>
+                                                                    <%= indices[8].low %>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Close Price</td>
+                                                                <td>
+                                                                    <%= indices[8].previousClose %>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% s +="c" %>
+                                        <div class="text-center col-lg-6 col-md-6 border border-dark border-3 bg-white">
+                                            <div>
+                                                <%= indices[9].indexName %>
+                                            </div>
+                                            <div>
+                                                &#8377;<%= indices[9].last %>
+                                            </div>
+                                            <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                                data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                Get Info
+                                            </button>
+                                            <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">
+                                                                <%= indices[9].indexName %>
+                                                            </h5>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div
+                                                            class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                            <table class="table table-hover">
+                                                                <tr>
+                                                                    <td>Open Price</td>
+                                                                    <td>
+                                                                        <%= indices[9].open %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>High Price</td>
+                                                                    <td>
+                                                                        <%= indices[9].high %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Low Price</td>
+                                                                    <td>
+                                                                        <%= indices[9].low %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Close Price</td>
+                                                                    <td>
+                                                                        <%= indices[9].previousClose %>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                    </div>
+                    <% s="d" %>
+                        <h3 class="fw-bold text-center text-white my-3">TOP GAINERS
+                        </h3>
+                        <div class="container">
+                            <div class="row">
+                                <div class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                    <div>
+                                        <%= gainers[0].symbol %>
+                                    </div>
+                                    <div>
+                                        &#8377;<%= gainers[0].ltp %>
+                                    </div>
+                                    <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                        data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                        Get Info
+                                    </button>
+                                    <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                        <%= gainers[0].symbol %>
+                                                    </h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div
+                                                    class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                    <table class="table table-hover">
+                                                        <tr>
+                                                            <td>Open Price</td>
+                                                            <td>
+                                                                <%= gainers[0].openPrice %>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>High Price</td>
+                                                            <td>
+                                                                <%= gainers[0].highPrice %>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Low Price</td>
+                                                            <td>
+                                                                <%= gainers[0].lowPrice %>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Last Price</td>
+                                                            <td>
+                                                                <%= gainers[0].previousPrice %>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% s +="d" %>
+                                    <div class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                        <div>
+                                            <%= gainers[1].symbol %>
+                                        </div>
+                                        <div>
+                                            &#8377;<%= gainers[1].ltp %>
+                                        </div>
+                                        <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                            data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                            Get Info
+                                        </button>
+                                        <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                            <%= gainers[1].symbol %>
+                                                        </h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div
+                                                        class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                        <table class="table table-hover">
+                                                            <tr>
+                                                                <td>Open Price</td>
+                                                                <td>
+                                                                    <%= gainers[1].openPrice %>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>High Price</td>
+                                                                <td>
+                                                                    <%= gainers[1].highPrice %>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Low Price</td>
+                                                                <td>
+                                                                    <%= gainers[1].lowPrice %>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Last Price</td>
+                                                                <td>
+                                                                    <%= gainers[1].previousPrice %>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% s +="d" %>
+                                        <div class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                            <div>
+                                                <%= gainers[2].symbol %>
+                                            </div>
+                                            <div>
+                                                &#8377;<%= gainers[2].ltp %>
+                                            </div>
+                                            <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                                data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                Get Info
+                                            </button>
+                                            <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">
+                                                                <%= gainers[2].symbol %>
+                                                            </h5>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div
+                                                            class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                            <table class="table table-hover">
+                                                                <tr>
+                                                                    <td>Open Price</td>
+                                                                    <td>
+                                                                        <%= gainers[2].openPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>High Price</td>
+                                                                    <td>
+                                                                        <%= gainers[2].highPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Low Price</td>
+                                                                    <td>
+                                                                        <%= gainers[2].lowPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Last Price</td>
+                                                                    <td>
+                                                                        <%= gainers[2].previousPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% s +="d" %>
+                                            <div
+                                                class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                                <div>
+                                                    <%= gainers[3].symbol %>
+                                                </div>
+                                                <div>
+                                                    &#8377;<%= gainers[3].ltp %>
+                                                </div>
+                                                <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                                    data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                    Get Info
+                                                </button>
+                                                <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                                    <%= gainers[3].symbol %>
+                                                                </h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div
+                                                                class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                                <table class="table table-hover">
+                                                                    <tr>
+                                                                        <td>Open Price</td>
+                                                                        <td>
+                                                                            <%= gainers[3].openPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>High Price</td>
+                                                                        <td>
+                                                                            <%= gainers[3].highPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Low Price</td>
+                                                                        <td>
+                                                                            <%= gainers[3].lowPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Last Price</td>
+                                                                        <td>
+                                                                            <%= gainers[3].previousPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            </div>
+                            <% s="e" %>
+                                <div class="row">
+                                    <div class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                        <div>
+                                            <%= gainers[4].symbol %>
+                                        </div>
+                                        <div>
+                                            &#8377;<%= gainers[4].ltp %>
+                                        </div>
+                                        <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                            data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                            Get Info
+                                        </button>
+                                        <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                            <%= indices[4].indexName %>
+                                                        </h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div
+                                                        class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                        <table class="table table-hover">
+                                                            <tr>
+                                                                <td>Open Price</td>
+                                                                <td>
+                                                                    <%= gainers[4].openPrice %>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>High Price</td>
+                                                                <td>
+                                                                    <%= gainers[4].highPrice %>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Low Price</td>
+                                                                <td>
+                                                                    <%= gainers[4].lowPrice %>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Last Price</td>
+                                                                <td>
+                                                                    <%= gainers[4].previousPrice %>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% s +="e" %>
+                                        <div class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                            <div>
+                                                <%= gainers[5].symbol %>
+                                            </div>
+                                            <div>
+                                                &#8377;<%= gainers[5].ltp %>
+                                            </div>
+                                            <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                                data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                Get Info
+                                            </button>
+                                            <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">
+                                                                <%= gainers[5].symbol %>
+                                                            </h5>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div
+                                                            class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                            <table class="table table-hover">
+                                                                <tr>
+                                                                    <td>Open Price</td>
+                                                                    <td>
+                                                                        <%= gainers[5].openPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>High Price</td>
+                                                                    <td>
+                                                                        <%= gainers[5].highPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Low Price</td>
+                                                                    <td>
+                                                                        <%= gainers[5].lowPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Last Price</td>
+                                                                    <td>
+                                                                        <%= gainers[5].previousPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% s +="e" %>
+                                            <div
+                                                class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                                <div>
+                                                    <%= gainers[6].symbol %>
+                                                </div>
+                                                <div>
+                                                    &#8377;<%= gainers[6].ltp %>
+                                                </div>
+                                                <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                                    data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                    Get Info
+                                                </button>
+                                                <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                                    <%= gainers[6].symbol %>
+                                                                </h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div
+                                                                class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                                <table class="table table-hover">
+                                                                    <tr>
+                                                                        <td>Open Price</td>
+                                                                        <td>
+                                                                            <%= gainers[6].openPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>High Price</td>
+                                                                        <td>
+                                                                            <%= gainers[6].highPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Low Price</td>
+                                                                        <td>
+                                                                            <%= gainers[6].lowPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Last Price</td>
+                                                                        <td>
+                                                                            <%= gainers[6].previousPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% s +="e" %>
+                                                <div
+                                                    class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                                    <div>
+                                                        <%= gainers[7].symbol %>
+                                                    </div>
+                                                    <div>
+                                                        &#8377;<%= gainers[7].ltp %>
+                                                    </div>
+                                                    <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                                        data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                        Get Info
+                                                    </button>
+                                                    <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                                        <%= gainers[7].symbol %>
+                                                                    </h5>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                                </div>
+                                                                <div
+                                                                    class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                                    <table class="table table-hover">
+                                                                        <tr>
+                                                                            <td>Open Price</td>
+                                                                            <td>
+                                                                                <%= gainers[7].openPrice %>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>High Price</td>
+                                                                            <td>
+                                                                                <%= gainers[7].highPrice %>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Low Price</td>
+                                                                            <td>
+                                                                                <%= gainers[7].lowPrice %>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Last Price</td>
+                                                                            <td>
+                                                                                <%= gainers[7].previousPrice %>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                </div>
+                                <% s="f" %>
+                                    <div class="row">
+                                        <div class="text-center col-lg-6 col-md-6 border border-dark border-3 bg-white">
+                                            <div>
+                                                <%= gainers[8].symbol %>
+                                            </div>
+                                            <div>
+                                                &#8377;<%= gainers[8].ltp %>
+                                            </div>
+                                            <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                                data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                Get Info
+                                            </button>
+                                            <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">
+                                                                <%= gainers[8].symbol %>
+                                                            </h5>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div
+                                                            class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                            <table class="table table-hover">
+                                                                <tr>
+                                                                    <td>Open Price</td>
+                                                                    <td>
+                                                                        <%= gainers[8].openPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>High Price</td>
+                                                                    <td>
+                                                                        <%= gainers[8].highPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Low Price</td>
+                                                                    <td>
+                                                                        <%= gainers[8].lowPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Last Price</td>
+                                                                    <td>
+                                                                        <%= gainers[8].previousPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% s +="f" %>
+                                            <div
+                                                class="text-center col-lg-6 col-md-6 border border-dark border-3 bg-white">
+                                                <div>
+                                                    <%= gainers[9].symbol %>
+                                                </div>
+                                                <div>
+                                                    &#8377;<%= gainers[9].ltp %>
+                                                </div>
+                                                <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                                    data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                    Get Info
+                                                </button>
+                                                <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                                    <%= gainers[9].symbol %>
+                                                                </h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div
+                                                                class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                                <table class="table table-hover">
+                                                                    <tr>
+                                                                        <td>Open Price</td>
+                                                                        <td>
+                                                                            <%= gainers[9].openPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>High Price</td>
+                                                                        <td>
+                                                                            <%= gainers[9].highPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Low Price</td>
+                                                                        <td>
+                                                                            <%= gainers[9].lowPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Last Price</td>
+                                                                        <td>
+                                                                            <%= gainers[9].previousPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                        </div>
+
+
+
+                        <% s="g" %>
+                            <h3 class="fw-bold text-center text-white my-3">
+                                TOP LOSERS
+                            </h3>
+
+                            <div class="container">
+                                <div class="row">
+                                    <div class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                        <div>
+                                            <%= losers[0].symbol %>
+                                        </div>
+                                        <div>
+                                            &#8377;<%= losers[0].ltp %>
+                                        </div>
+                                        <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                            data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                            Get Info
+                                        </button>
+                                        <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                            <%= losers[0].symbol %>
+                                                        </h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div
+                                                        class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                        <table class="table table-hover">
+                                                            <tr>
+                                                                <td>Open Price</td>
+                                                                <td>
+                                                                    <%= losers[0].openPrice %>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>High Price</td>
+                                                                <td>
+                                                                    <%= losers[0].highPrice %>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Low Price</td>
+                                                                <td>
+                                                                    <%= losers[0].lowPrice %>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Last Price</td>
+                                                                <td>
+                                                                    <%= losers[0].previousPrice %>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% s +="g" %>
+                                        <div class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                            <div>
+                                                <%= losers[1].symbol %>
+                                            </div>
+                                            <div>
+                                                &#8377;<%= losers[1].ltp %>
+                                            </div>
+                                            <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                                data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                Get Info
+                                            </button>
+                                            <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">
+                                                                <%= losers[1].symbol %>
+                                                            </h5>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div
+                                                            class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                            <table class="table table-hover">
+                                                                <tr>
+                                                                    <td>Open Price</td>
+                                                                    <td>
+                                                                        <%= losers[1].openPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>High Price</td>
+                                                                    <td>
+                                                                        <%= losers[1].highPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Low Price</td>
+                                                                    <td>
+                                                                        <%= losers[1].lowPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Last Price</td>
+                                                                    <td>
+                                                                        <%= losers[1].previousPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% s +="g" %>
+                                            <div
+                                                class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                                <div>
+                                                    <%= losers[2].symbol %>
+                                                </div>
+                                                <div>
+                                                    &#8377;<%= losers[2].ltp %>
+                                                </div>
+                                                <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                                    data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                    Get Info
+                                                </button>
+                                                <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                                    <%= losers[2].symbol %>
+                                                                </h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div
+                                                                class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                                <table class="table table-hover">
+                                                                    <tr>
+                                                                        <td>Open Price</td>
+                                                                        <td>
+                                                                            <%= losers[2].openPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>High Price</td>
+                                                                        <td>
+                                                                            <%= losers[2].highPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Low Price</td>
+                                                                        <td>
+                                                                            <%= losers[2].lowPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Last Price</td>
+                                                                        <td>
+                                                                            <%= losers[2].previousPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% s +="g" %>
+                                                <div
+                                                    class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                                    <div>
+                                                        <%= losers[3].symbol %>
+                                                    </div>
+                                                    <div>
+                                                        &#8377;<%= losers[3].ltp %>
+                                                    </div>
+                                                    <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                                        data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                        Get Info
+                                                    </button>
+                                                    <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                                        <%= losers[3].symbol %>
+                                                                    </h5>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                                </div>
+                                                                <div
+                                                                    class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                                    <table class="table table-hover">
+                                                                        <tr>
+                                                                            <td>Open Price</td>
+                                                                            <td>
+                                                                                <%= losers[3].openPrice %>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>High Price</td>
+                                                                            <td>
+                                                                                <%= losers[3].highPrice %>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Low Price</td>
+                                                                            <td>
+                                                                                <%= losers[3].lowPrice %>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Last Price</td>
+                                                                            <td>
+                                                                                <%= losers[3].previousPrice %>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                </div>
+                                <% s="h" %>
+                                    <div class="row">
+                                        <div class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                            <div>
+                                                <%= losers[4].symbol %>
+                                            </div>
+                                            <div>
+                                                &#8377;<%= losers[4].ltp %>
+                                            </div>
+                                            <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                                data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                Get Info
+                                            </button>
+                                            <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">
+                                                                <%= losers[4].symbol %>
+                                                            </h5>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div
+                                                            class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                            <table class="table table-hover">
+                                                                <tr>
+                                                                    <td>Open Price</td>
+                                                                    <td>
+                                                                        <%= losers[4].openPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>High Price</td>
+                                                                    <td>
+                                                                        <%= losers[4].highPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Low Price</td>
+                                                                    <td>
+                                                                        <%= losers[4].lowPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Last Price</td>
+                                                                    <td>
+                                                                        <%= losers[4].previousPrice %>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% s +="h" %>
+                                            <div
+                                                class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                                <div>
+                                                    <%= losers[5].symbol %>
+                                                </div>
+                                                <div>
+                                                    &#8377;<%= losers[5].ltp %>
+                                                </div>
+                                                <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                                    data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                    Get Info
+                                                </button>
+                                                <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                                    <%= losers[5].symbol %>
+                                                                </h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div
+                                                                class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                                <table class="table table-hover">
+                                                                    <tr>
+                                                                        <td>Open Price</td>
+                                                                        <td>
+                                                                            <%= losers[5].openPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>High Price</td>
+                                                                        <td>
+                                                                            <%= losers[5].highPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Low Price</td>
+                                                                        <td>
+                                                                            <%= losers[5].lowPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Last Price</td>
+                                                                        <td>
+                                                                            <%= losers[5].previousPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% s +="h" %>
+                                                <div
+                                                    class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                                    <div>
+                                                        <%= losers[6].symbol %>
+                                                    </div>
+                                                    <div>
+                                                        &#8377;<%= losers[6].ltp %>
+                                                    </div>
+                                                    <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                                        data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                        Get Info
+                                                    </button>
+                                                    <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                                        <%= losers[6].symbol %>
+                                                                    </h5>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                                </div>
+                                                                <div
+                                                                    class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                                    <table class="table table-hover">
+                                                                        <tr>
+                                                                            <td>Open Price</td>
+                                                                            <td>
+                                                                                <%= losers[6].openPrice %>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>High Price</td>
+                                                                            <td>
+                                                                                <%= losers[6].highPrice %>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Low Price</td>
+                                                                            <td>
+                                                                                <%= losers[6].lowPrice %>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Last Price</td>
+                                                                            <td>
+                                                                                <%= losers[6].previousPrice %>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <% s +="h" %>
+                                                    <div
+                                                        class="text-center bg-white col-lg-3 col-md-6 border border-dark border-3">
+                                                        <div>
+                                                            <%= losers[7].symbol %>
+                                                        </div>
+                                                        <div>
+                                                            &#8377;<%= losers[7].ltp %>
+                                                        </div>
+                                                        <button type="button"
+                                                            class="d-grid mx-auto my-3 btn btn-primary"
+                                                            data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                            Get Info
+                                                        </button>
+                                                        <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                                            <%= losers[7].symbol %>
+                                                                        </h5>
+                                                                        <button type="button" class="btn-close"
+                                                                            data-bs-dismiss="modal"
+                                                                            aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div
+                                                                        class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                                        <table class="table table-hover">
+                                                                            <tr>
+                                                                                <td>Open Price</td>
+                                                                                <td>
+                                                                                    <%= losers[7].openPrice %>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>High Price</td>
+                                                                                <td>
+                                                                                    <%= losers[7].highPrice %>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Low Price</td>
+                                                                                <td>
+                                                                                    <%= losers[7].lowPrice %>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Last Price</td>
+                                                                                <td>
+                                                                                    <%= losers[7].previousPrice %>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                    </div>
+                                    <% s="i" %>
+                                        <div class="row">
+                                            <div
+                                                class="text-center col-lg-6 col-md-6 border border-dark border-3 bg-white">
+                                                <div>
+                                                    <%= losers[8].symbol %>
+                                                </div>
+                                                <div>
+                                                    &#8377;<%= losers[8].ltp %>
+                                                </div>
+                                                <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                                    data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                    Get Info
+                                                </button>
+                                                <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                                    <%= losers[8].symbol %>
+                                                                </h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div
+                                                                class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                                <table class="table table-hover">
+                                                                    <tr>
+                                                                        <td>Open Price</td>
+                                                                        <td>
+                                                                            <%= losers[8].openPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>High Price</td>
+                                                                        <td>
+                                                                            <%= losers[8].highPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Low Price</td>
+                                                                        <td>
+                                                                            <%= losers[8].lowPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Last Price</td>
+                                                                        <td>
+                                                                            <%= losers[8].previousPrice %>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% s +="i" %>
+                                                <div
+                                                    class="text-center col-lg-6 col-md-6 border border-dark border-3 bg-white">
+                                                    <div>
+                                                        <%= losers[9].symbol %>
+                                                    </div>
+                                                    <div>
+                                                        &#8377;<%= losers[9].ltp %>
+                                                    </div>
+                                                    <button type="button" class="d-grid mx-auto my-3 btn btn-primary"
+                                                        data-bs-toggle="modal" data-bs-target="#<%= s %>">
+                                                        Get Info
+                                                    </button>
+                                                    <div class="modal fade" id="<%= s %>" tabindex="-1"
+                                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                                        <%= losers[9].symbol %>
+                                                                    </h5>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                                </div>
+                                                                <div
+                                                                    class="modal-body modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                                    <table class="table table-hover">
+                                                                        <tr>
+                                                                            <td>Open Price</td>
+                                                                            <td>
+                                                                                <%= losers[9].openPrice %>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>High Price</td>
+                                                                            <td>
+                                                                                <%= losers[9].highPrice %>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Low Price</td>
+                                                                            <td>
+                                                                                <%= losers[9].lowPrice %>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Last Price</td>
+                                                                            <td>
+                                                                                <%= losers[9].previousPrice %>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                            </div>
+                            <footer class="footer bg-dark py-3 mt-auto">
+                                <div class="container">
+                                    <span class="text-muted">&copy; VTradeIN</span>
+                                </div>
+                            </footer>

@@ -1,0 +1,81 @@
+<% layout("layout/boilerplate") %>
+    <h3 class="container d-flex justify-content-center my-3">
+        <span class="bg-secondary badge">Balance = &#8377;<%= currentUser.balanceAmt.toFixed(2) %></span>
+    </h3>
+    <% let sum=0, totalInvestment=0; %>
+        <div class="container col-auto">
+            <table class="table table-hover">
+                <tr>
+                    <th class="text-white">Stock Name</th>
+                    <th class="text-white">Quantity</th>
+                    <th class="text-white">Average Price</th>
+                    <th class="text-white">Last Trade Price</th>
+                    <th class="text-white">P & L</th>
+                </tr>
+                <% for(let stock of currentUser.stockBought) { %>
+                    <tr>
+                        <td class="text-white">
+                            <a href="/stocks/<%= stock.symbol %> ">
+                                <%= stock.symbol %>
+                            </a>
+                        </td>
+                        <td class="text-white">
+                            <%= stock.qty %>
+                        </td>
+                        <td class="text-white">
+                            <%= stock.buyPrice.toFixed(2) %>
+                        </td>
+                        <td class="text-white">
+                            <%= stockData.get(stock.symbol) %>
+                        </td>
+                        <% let
+                            diff=(parseFloat(stockData.get(stock.symbol))-parseFloat(stock.buyPrice))*parseFloat(stock.qty);
+                            totalInvestment +=parseFloat(stock.buyPrice)*stock.qty; %>
+                            <% sum +=(diff) %>
+                                <% diff=diff.toFixed(2) %>
+                                    <% let percentage=diff/stock.buyPrice.toFixed(2) %>
+                                        <% percentage/=stock.qty %>
+                                            <% percentage*=100%>
+                                                <% if(diff<0) { %>
+                                                    <td class="table-danger">
+                                                        <%= Math.abs(diff) %>
+                                                            <span>
+                                                                (<%= percentage.toFixed(2) %>%)
+                                                            </span>
+                                                    </td>
+                                                    <% } else {%>
+                                                        <td class="table-success">
+                                                            <%= diff %>
+                                                                <span>
+                                                                    (<%= percentage.toFixed(2) %>%)
+                                                                </span>
+                                                        </td>
+                                                        <% } %>
+
+                    </tr>
+                    <% } %>
+            </table>
+        </div>
+
+        <% sum=sum.toFixed(2) %>
+            <% let percentage=sum/totalInvestment %>
+                <% percentage*=100 %>
+                    <% if(sum<0) { %>
+                        <h5 class="container d-flex justify-content-end">
+                            <span class="bg-danger badge">
+                                TOTAL LOSS = <%= Math.abs(sum) %>
+                                    (<%= percentage.toFixed(2) %>)
+                            </span>
+                        </h5>
+                        <% } else { %>
+                            <h5 class="container d-flex justify-content-end">
+                                <span class="bg-success badge">TOTAL PROFIT = <%= sum %>
+                                        (<%= percentage.toFixed(2) %>%)
+                                </span>
+                            </h5>
+                            <% } %>
+                                <footer class="footer bg-dark py-3 fixed-bottom mt-auto">
+                                    <div class="container">
+                                        <span class="text-muted">&copy; VTradeIN</span>
+                                    </div>
+                                </footer>

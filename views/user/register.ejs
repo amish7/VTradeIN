@@ -1,0 +1,34 @@
+<% layout('/layout/boilerplate') %>
+
+    <h1 class="text-center my-3 text-white">REGISTER</h1>
+    <div class="container col-6">
+        <form action="/user/register" method="POST" class="validated-form" novalidate>
+            <div class="mb-3">
+                <label class="form-label text-white" for="username">Username</label>
+                <input class="form-control" type="text" id="username" name="username" required>
+                <div class="valid-feedback text-white">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label text-white" for="email">Email</label>
+                <input class="form-control" type="email" id="email" name="email" required>
+                <div class="valid-feedback text-white">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label text-white" for="password">Password</label>
+                <input class="form-control" type="password" id="password" name="password" required>
+                <div class="valid-feedback text-white">
+                    Looks good!
+                </div>
+            </div>
+            <button class="btn btn-success">Register</button>
+        </form>
+    </div>
+    <footer class="footer bg-dark py-3 fixed-bottom mt-auto">
+        <div class="container">
+            <span class="text-muted">&copy; VTradeIN</span>
+        </div>
+    </footer>

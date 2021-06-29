@@ -1,0 +1,26 @@
+<% layout('/layout/boilerplate') %>
+    <h3 class="text-center my-3 text-white">Search for a Stock</h3>
+
+    <form class="container col-6" action="/stocks/search" method="POST" class="validated-form" novalidate>
+        <div class="mb-3">
+            <label for="name" class="form-label text-white">Enter the name of the stock: </label>
+            <input type="text" id="name" name="stock[name]" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    <% if(searchResult) { %>
+        <div class="container col-6 my-3">
+            <div class="list-group">
+                <% for(let stock of searchResult) { %>
+                    <a href="/stocks/<%= stock.symbol %>" class="list-group-item list-group-item-action">
+                        <%= stock.name %>
+                    </a>
+                    <% } %>
+            </div>
+            <% } %>
+        </div>
+        <footer class="footer bg-dark py-3 fixed-bottom mt-auto">
+            <div class="container">
+                <span class="text-muted">&copy; VTradeIN</span>
+            </div>
+        </footer>

@@ -1,0 +1,23 @@
+<% layout("layout/boilerplate") %>
+    <h3 class="text-center my-3 text-white">Buying <%= data.symbol %>
+    </h3>
+
+    <form class="container col-6" action="/stocks/<%= data.symbol %>/buy" method="POST" class="validated-form"
+        novalidate>
+        <div class="mb-3">
+            <label for="qty" class="form-label text-white">Enter the quantity</label>
+            <input type="number" class="form-control" name="stock[quantity]" id="qty" required>
+        </div>
+        <div class="mb-3">
+            <label for="amt" class="form-label text-white">Enter the buy price</label>
+            <input type="text" class="form-control" name="stock[amount]" id="amt" required>
+        </div>
+        <div class="mb-3 text-white">Current Price = <%= data.lastPrice %>
+        </div>
+        <button type="submit" class="btn btn-success">Buy</button>
+    </form>
+    <footer class="footer bg-dark py-3 fixed-bottom mt-auto">
+        <div class="container">
+            <span class="text-muted">&copy; VTradeIN</span>
+        </div>
+    </footer>
