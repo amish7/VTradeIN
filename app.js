@@ -86,7 +86,6 @@ app.use((req, res, next) => {
 app.get("/", catchAsync(async (req, res, next) => {
 	NSEAPI.getIndices().then(function (response) {
 		const indices = response.data.data;
-		console.log(indices);
 		NSEAPI.getMarketStatus().then(function (response) {
 			const status = response.data.status;
 			NSEAPI.getGainers().then(function (response) {
