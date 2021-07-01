@@ -25,7 +25,7 @@ npm install
 * Create a .env file in the root directory.
 * Set up the required environment variables in the .env file: 
 ```javascript
-DB_URL= // mongodb://localhost:27017/blogify
+DB_URL= // mongodb://localhost:27017/vtradein
 SECRET= // "ANYTHINGCANBEHERE"
 ```
 * Run the project by entering *npm start*.
